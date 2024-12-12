@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommendations</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="recommendations-container">
+        <h1>Recommendations for "<%= query %>"</h1>
+
+        <h2>Content-based Recommendations:</h2>
+        <ul>
+            <% tfidf_recommendations.forEach(item => { %>
+                <li><%= item %></li>
+            <% }); %>
+        </ul>
+
+        <h2>Semantic Recommendations:</h2>
+        <ul>
+            <% semantic_recommendations.forEach(item => { %>
+                <li><%= item %></li>
+            <% }); %>
+        </ul>
+
+        <a href="/">Back to search</a>
+    </div>
+</body>
+</html>
